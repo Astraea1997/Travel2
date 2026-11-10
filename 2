@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f3e9">
+<title>愛媛 × 廣島｜我們的小旅行</title>
+<style>
+:root{--ink:#3d3a38;--muted:#89827b;--paper:#fffdf7;--cream:#f8f3e9;--line:#48413d;--yellow:#f4d27c;--pink:#e9a69b;--green:#a9c69a;--blue:#dcebf0;--shadow:0 8px 24px #53473a12}
+*{box-sizing:border-box}body{margin:0;background:#eee9e0;color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+button{font:inherit;color:inherit}.page{width:min(100%,720px);margin:24px auto;background:var(--paper);border:1.5px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:0 18px 55px #40372d18}
+.topnav{display:flex;align-items:center;gap:7px;padding:15px 18px;border-bottom:1.5px solid var(--line);background:#fffefa;position:sticky;top:0;z-index:3}
+.brand{font-size:13px;font-weight:700;white-space:nowrap;margin-right:auto}.tab{border:1.5px solid transparent;background:transparent;border-radius:22px;padding:8px 12px;font-size:12px;cursor:pointer}.tab.active{background:var(--yellow);border-color:var(--line);font-weight:700}
+.hero{padding:18px 18px 0}.art{width:100%;display:block;border:1.5px solid var(--line);border-radius:22px;background:var(--blue)}
+.kicker{display:inline-block;margin-top:18px;padding:6px 12px;border:1.5px solid var(--line);border-radius:20px;background:#f7e4df;font-size:12px;letter-spacing:.08em}
+h1{font-size:clamp(28px,6vw,40px);letter-spacing:.06em;margin:10px 0 4px}.subtitle{color:var(--muted);font-size:13px;margin:0 0 15px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:16px 0 10px}.timebox{border:1.5px solid var(--line);border-radius:15px;text-align:center;padding:10px 3px;background:#fff}.timebox:first-child{background:var(--yellow)}.num{font-size:27px;font-weight:700;font-variant-numeric:tabular-nums}.unit{font-size:11px;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);margin:10px 0 18px}
+.content{padding:0 18px 24px}.panel{display:none}.panel.active{display:block}.section-title{font-size:20px;margin:22px 0 12px;display:flex;align-items:center;gap:9px}.section-title:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pink);border:1px solid var(--line)}
+.card{background:#fffefa;border:1.5px solid var(--line);border-radius:18px;padding:15px;margin:10px 0;box-shadow:var(--shadow)}.card h3{font-size:16px;margin:0 0 8px}.muted{color:var(--muted);font-size:12px;line-height:1.6}.row{display:flex;justify-content:space-between;gap:12px;align-items:center}.pill{font-size:11px;border:1px solid var(--line);border-radius:20px;padding:4px 9px;background:#f7e4df;white-space:nowrap}
+.flight{background:linear-gradient(120deg,#f5d4ca,#f8e5d7)}.flightline{display:flex;align-items:center;justify-content:space-between;margin:12px 0}.airport{font-size:24px;font-weight:700}.plane{font-size:22px}.details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.detail{background:#f8f3e9;border-radius:12px;padding:10px;font-size:12px}.detail b{display:block;font-size:14px;margin-top:4px}
+.day-card{background:#fffefa;border:1.5px solid var(--line);border-radius:18px;padding:15px;margin:14px 0;box-shadow:var(--shadow)}
+.day-header{display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1.5px dashed #d6cbc0;margin-bottom:12px}
+.date{background:var(--green);border:1.5px solid var(--line);border-radius:13px;text-align:center;padding:7px 10px;font-weight:700;min-width:56px}.date small{display:block;font-size:10px;font-weight:400}
+.day-title{margin:0;font-size:16px}.day-sub{margin:3px 0 0;font-size:12px;color:var(--muted)}
+.timeline{list-style:none;margin:0;padding:0}
+.timeline li{display:flex;gap:10px;padding:6px 0;font-size:13px;line-height:1.5;border-bottom:1px solid #f2ece1}
+.timeline li:last-child{border-bottom:none}
+.time{font-weight:700;color:#6e655f;min-width:44px;font-variant-numeric:tabular-nums}
+.spot{flex:1}
+.tag-note{display:inline-block;background:#fff4d9;border:1px solid #d4b872;border-radius:6px;padding:1px 6px;font-size:11px;margin-left:4px;color:#5c4d26}
+.stay{display:flex;gap:13px;align-items:center}.stayicon{width:56px;height:56px;flex:none;border-radius:14px;background:var(--blue);display:grid;place-items:center;font-size:26px;border:1px solid var(--line)}
+.memorygrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.memory{min-height:112px;border:1.5px dashed #b9aaa0;border-radius:15px;background:#faf6ee;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:12px;padding:12px;line-height:1.6}
+footer{text-align:center;color:#9a9187;font-size:11px;padding:18px;border-top:1px solid #e7dfd4;letter-spacing:.08em}
+a{color:inherit}
+@media(max-width:480px){body{background:var(--paper)}.page{margin:0;border:0;border-radius:0;box-shadow:none}.topnav{gap:2px;padding:12px 9px}.brand{font-size:11px}.tab{padding:7px 8px;font-size:11px}.hero{padding:13px 13px 0}.content{padding:0 13px 20px}.num{font-size:23px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <nav class="topnav" aria-label="旅遊分頁">
+    <div class="brand">✿ OUR LITTLE TRIP</div>
+    <button class="tab active" data-tab="home">首頁</button>
+    <button class="tab" data-tab="flight">航班</button>
+    <button class="tab" data-tab="plan">行程</button>
+    <button class="tab" data-tab="stay">住宿</button>
+    <button class="tab" data-tab="memory">回憶</button>
+  </nav>
+
+  <section class="hero">
+    <svg class="art" viewBox="0 0 640 300" role="img" aria-label="愛媛廣島旅行插畫：城堡、山、飛機與太陽">
+      <rect width="640" height="300" rx="20" fill="#dcebf0"/>
+      <circle cx="535" cy="70" r="35" fill="#f4d27c" stroke="#48413d" stroke-width="4"/>
+      <g stroke="#48413d" stroke-width="4" stroke-linecap="round"><path d="M535 18v-12M535 134v-12M483 70h-12M599 70h-12M498 33l-9-9M581 116l-9-9M572 33l9-9M489 116l9-9"/></g>
+      <path d="M0 220L90 130 165 206 250 120 335 210 425 130 510 210 585 150 640 205V300H0Z" fill="#b8d0a6" stroke="#48413d" stroke-width="4"/>
+      <path d="M0 250L110 180 190 245 290 170 385 250 500 175 640 245V300H0Z" fill="#a9c69a" stroke="#48413d" stroke-width="3"/>
+      <g transform="translate(245 86)" stroke="#48413d" stroke-width="4" stroke-linejoin="round">
+        <path d="M25 160h130l-17-42H42Z" fill="#fffdf7"/><path d="M40 118h100V92H40Z" fill="#fffdf7"/>
+        <path d="M28 92h125l-20-20H48Z" fill="#a9c69a"/><path d="M52 72h75V48H52Z" fill="#fffdf7"/>
+        <path d="M42 48h95L122 29H57Z" fill="#a9c69a"/><path d="M66 29h47V10H66Z" fill="#fffdf7"/>
+        <path d="M59 10l-5-17 12 7 4 10M115 10l5-17-12 7-4 10" fill="#f4d27c"/>
+        <path d="M76 48V31h17v17" fill="#dcebf0"/><path d="M70 96v-18h12v18M95 96v-18h12v18" fill="#48413d"/>
+        <path d="M62 137h10M100 137h10M82 151h14" fill="none"/>
+      </g>
+      <g transform="translate(90 44) rotate(-8)" stroke="#48413d" stroke-width="4" stroke-linejoin="round">
+        <path d="M0 18Q8 4 25 12L91 12Q105 12 113 22Q104 32 91 32H25Q8 40 0 27Z" fill="#fffdf7"/>
+        <path d="M44 12L35 -5 52 -5 66 12M53 32L40 51 57 51 72 32" fill="#e9a69b"/>
+        <circle cx="83" cy="21" r="4" fill="#dcebf0"/><circle cx="69" cy="21" r="4" fill="#dcebf0"/>
+      </g>
+      <g fill="#fffdf7" stroke="#48413d" stroke-width="4"><path d="M28 125q-2-24 25-24 10-28 43-17 24-1 28 23 22 4 18 22H28Z"/><path d="M425 130q0-22 24-22 12-27 40-12 23-1 25 22 18 4 14 20H425Z"/></g>
+      <path d="M0 270H640" stroke="#48413d" stroke-width="4"/>
+      <g stroke="#48413d" stroke-width="3"><path d="M20 270v13M58 270v13M96 270v13M134 270v13M172 270v13M210 270v13M248 270v13M286 270v13M324 270v13M362 270v13M400 270v13M438 270v13M476 270v13M514 270v13M552 270v13M590 270v13"/></g>
+    </svg>
+    <div class="kicker">愛媛・廣島・兩個人的旅行</div>
+    <h1>我們的小旅行</h1>
+    <p class="subtitle">2026.12.10 — 12.16　｜　7 DAYS, 6 NIGHTS</p>
+    <div class="countdown">
+      <div class="timebox"><div class="num" id="days">--</div><div class="unit">天</div></div>
+      <div class="timebox"><div class="num" id="hours">--</div><div class="unit">時</div></div>
+      <div class="timebox"><div class="num" id="minutes">--</div><div class="unit">分</div></div>
+      <div class="timebox"><div class="num" id="seconds">--</div><div class="unit">秒</div></div>
+    </div>
+    <p class="note" id="countdown-note">距離出發，還有一點點期待。</p>
+  </section>
+
+  <div class="content">
+    <!-- 首頁 -->
+    <section class="panel active" id="home">
+      <h2 class="section-title">旅程小提醒</h2>
+      <div class="card">
+        <div class="row"><h3>✈ 出發集合</h3><span class="pill">2026.12.10（四）06:25</span></div>
+        <p class="muted">桃園機場第一航廈出發，直飛日本四國松山機場（MYJ），再搭高速船前往廣島。</p>
+      </div>
+      <div class="card">
+        <div class="row"><h3>♡ 旅行關鍵字</h3><span class="pill">7天 76個景點</span></div>
+        <p class="muted">廣島市區・宮島嚴島神社・道後溫泉本館・下灘海景車站・松山城・宇和島鯛魚飯・廣島燒・蜜柑甜點。</p>
+      </div>
+      <div class="card">
+        <div class="row"><h3>📌 行程重要備忘</h3><span class="pill">必看時間</span></div>
+        <p class="muted">
+          • <b>Day 1</b>：Pokémon Center Hiroshima 營業至 20:00。<br>
+          • <b>Day 4</b>：道後少爺列車一天僅三個時段（10:02、14:02、15:42）。<br>
+          • <b>購物優惠</b>：別忘了使用 Funliday 附帶的 BicCamera、唐吉訶德、松本清等日本折價券。
+        </p>
+      </div>
+    </section>
+
+    <!-- 航班與交通 -->
+    <section class="panel" id="flight">
+      <h2 class="section-title">航班與跨海交通</h2>
+      <div class="card flight">
+        <div class="row"><h3>去程航班</h3><span class="pill">2026.12.10（四）</span></div>
+        <div class="flightline">
+          <div><div class="airport">TPE</div><div class="muted">桃園第一航廈</div></div>
+          <div class="plane">✈ ───────</div>
+          <div style="text-align:right"><div class="airport">MYJ</div><div class="muted">愛媛松山機場</div></div>
+        </div>
+        <div class="details">
+          <div class="detail">集合/起飛時間<b>06:25 出發</b></div>
+          <div class="detail">預計抵達時間<b>09:45 抵達</b></div>
+        </div>
+      </div>
+
+      <div class="card">
